@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<!--문제4.
+    prompt 로 각각 세번
+    1) 국어점수 입력받기
+    2) 수학점수 입력받기
+    3) 과학점수 입력받기
+    를 한다.
+    그리고 알림창으로 3과목의 평균을 띄운다.
+    웹페이지에는
+    국어점수가 70이상 이며 수학점수가 50이상 과학점수가 80이상일때만 true 값을 띄운다. 
+    그 이하일때는 false 를 표현한다.
+ -->
+ <script>
+    let k_score = prompt('국어점수?')*1;
+    let m_score = prompt('수학점수?')*1;
+    let s_score = prompt('과학점수?')*1;
+    alert(`입력하신점 수는\n 국어점수 ${k_score}점,\n 수학점수 ${m_score}점,\n 과학점수 ${s_score}점\n 이며 평균점수는 ${(k_score+m_score+s_score)/3}점 입니다.`)
+    document.write("<h1>"+(k_score>=70)&&(s_score>=50)&&(m_score>=80)+"</h1>")
+ </script>
+</body>
+</html>

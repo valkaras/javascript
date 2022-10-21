@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>자료형 변호나</title>
+    <script>
+        let num = prompt('숫자를 입력하세요.')
+        console.log(typeof(num))
+        list = ''
+        list += "<h3>입력하신 "+ num + " 값은 " + typeof(num) +" 타입 입니다.<br>"
+        list += " 이 타입을 Number()를 사용하여 숫자로 변환 하겠습니다.</h3>"    
+        list += "<mark><h3 style='display:inline'>"+Number(num) +"으로 변환 완료</h3> <h4 style='display:inline'> (타입:" + typeof(Number(num)) +")</h4></mark><br>"                    
+        let str = Number(num);
+        list += "<h3> 이제 숫자 타입을 Sting()를 사용하여 문자로 변환 하겠습니다.</h3>";
+        list += "<h3>숫자 :" + str + "는" + typeof(str) +" 타입으로 문자 타입으로 변환하면 이렇게 됩니다.</h3>" 
+        list += "<mark><h3 style='display:inline'>"+String(str) +"으로 변환 완료</h3> <h4 style='display:inline'> (타입:" + typeof(String(str)) +")</h4></mark><br>"                    
+
+        document.write(list);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
