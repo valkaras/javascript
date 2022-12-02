@@ -1,0 +1,7 @@
+        table *{
+            border: 1px solid black;
+            width: 30%
+        }
+        table {border-collapse: collapse;}
+        th {background-color: aquamarine;}
+        td {text-align: center;}    

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키로 별 이동하기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const star = document.createElement('h1')
+            document.body.appendChild(star)
+            star.innerHTML = '★'
+            star.style.position = 'absolute'
+
+            let [x,y]=[0,0]
+            const block = 20
+            const print =_=>{
+                star.style.left = `${x*block}px`
+                star.style.top = `${y*block}px`
+            }
+            print() // 초기위치0
+            const keys = {ArrowLeft:37,ArrowUp:38,ArrowRight:39,ArrowDown:40}
+            const {ArrowLeft:left,ArrowUp:up,ArrowDown:down,ArrowRight:right} = keys
+            let check = 0;
+            document.body.addEventListener('keydown',event=>{
+                check = event.keyCode
+                if(left===check)x -= 1
+                if(up===check)y -= 1
+                if(right===check)x += 1
+                if(down===check)y += 1
+                print()
+            })
+        })
+        
+
+    </script>
+</head>
+<body>
+    <audio
+        controls
+        src="./byulbit.mp3">
+                이 문장은 브라우저에 오디오가 지원되지 않을 때 나타납니다.
+    </audio>
+</body>
+</html>

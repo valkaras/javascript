@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>369게임</title>
+</head>
+<body>
+    <script>
+        // 1~300까지 아래와 같은 조건으로 출력
+        // 3의 배수 = 짝
+        // 5의 배수 = wow
+        // 둘이 만나게 되면 = 와우
+
+        for(let i=1;i<=300;i++){
+            if(i%3==0&&i%5==0){
+                document.write("와우")
+            }else if(i%5==0){
+                document.write("wow")
+            }else if(i%3==0){
+                document.write("짝")
+            }else{
+            document.write(i+" ")
+            }
+        }
+
+
+
+
+        // 순서 바꾸기 전 비정상
+        // for(let i=1;i<=300;i++){
+        //     if(i%3==0){
+        //         document.write("짝 ")
+        //     }else if(i%5==0){
+        //         document.write("wow ")
+        //     }else if(i%15==0){
+        //         document.write("와우 ")                
+        //     }else{
+        //         document.write(i+" ")
+        //     }
+        // }
+        // 순서 바꾼 후 동작
+        // for(let i=1;i<=300;i++){
+        //     if(i%15==0){
+        //         document.write("와우 ")                
+        //     }else if(i%5==0){
+        //         document.write("wow ")
+        //     }else if(i%3==0){
+        //         document.write("짝 ")
+        //     }else{
+        //         document.write(i+" ")
+        //     }
+        // 순서 바꾸기 전 비정상
+        // for(let i=1;i<=300;i++){
+        // if(i%3==0){
+        //     document.write("짝 ")
+        // }else if(i%5==0){
+        //     document.write("wow ")
+        // }else if(i%3&&i%5==0){
+        //     document.write("와우 ")                
+        // }else{
+        //     document.write(i+" ")
+        // }}
+        // 순서 바꾼 후 동작
+        // for(let i=1;i<=300;i++){
+        // if(i%3==0&&i%5==0){
+        //     document.write("와우 ")                
+        // }else if(i%5==0){
+        //     document.write("wow ")
+        // }else if(i%3==0){
+        //     document.write("짝 ")
+        // }else{
+        //     document.write(i+" ")
+        // }
+        
+    </script>
+</body>
+</html>

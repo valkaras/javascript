@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //즉시실행함수는 선언과 동시에 호출되어 실행되며 재사용이 불가.
+        (function(){
+            console.log('즉시실행함수1')
+        })();
+        (()=>{
+            console.log('즉시실행함수2')
+        })();
+
+        //즉시실행함수의 장점
+        //1. 필요없는 전역변수의 생성을 줄일 수 있다.
+        //2. private(자신만 사용하는)한 변수를 만들 수 있다.
+
+        let isAdult;
+
+        (function(age) {
+            let currentAge = age
+            // if(age >= 20) isAdult = true; else isAdult = false
+            isAdult = age>=20?true:false
+        })()
+
+        console.log(isAdult)
+        console.log(currentAge) //즉시실행함수의 장점1
+    </script>
+</head>
+<body>
+    <h1>즉시 실행 함수</h1>
+</body>
+</html>

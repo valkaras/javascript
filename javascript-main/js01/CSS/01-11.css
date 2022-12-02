@@ -1,0 +1,6 @@
+        table *{
+            border: 1px solid black;
+        }
+        table {border-collapse: collapse;}
+        th {background-color: aquamarine;}
+        td:first-child, td:last-child {text-align: center;}    

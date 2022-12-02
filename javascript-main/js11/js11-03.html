@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>최소값 / 최대값 구하기</title>
+</head>
+<body>
+    <script>
+
+        function rand(num){
+            const arr=[]
+            let ran =0;
+            for(let i=0;i<num;i++){
+                ran = Math.floor(Math.random()*100)+1
+                arr[i] = ran
+            }
+            return arr
+        }
+        let choice = rand(7)               
+        function min(arr_in){
+            let resultMin = arr_in[0]
+            for(let j=0;j<arr_in.length;j++){
+                if (resultMin > arr_in[j]){
+                    resultMin = arr_in[j]
+                }
+            }
+            return resultMin
+        }
+        function max(arr_in){
+            let resultMax = arr_in[0]
+            for(let max of arr_in){
+                if (resultMax < max){
+                    resultMax = max
+                }
+            }
+            return resultMax
+        }
+        document.write(choice+"<br>최소값은: " + min(choice)+"<br>최대값은: " + max(choice))        
+
+    </script>
+</body>
+</html>

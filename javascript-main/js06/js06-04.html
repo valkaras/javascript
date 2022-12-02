@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또</title>
+    <style>
+        table {            
+            border-collapse: collapse;
+            text-align: center;
+        }
+        tr,td{
+            border: 1px solid black;
+        }
+        tr:nth-child(2n+1) {
+            background-color: antiquewhite;
+        }
+        div[class]{
+            margin-bottom: 1px;
+            width: 50%;
+            height: 3px;
+            background-color:cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const target = Number(prompt('반복할 횟수를 입력하세요.'))
+        console.time("로또엔진"+target+"회 동작");  // 코드시간 측정시작
+    /* 변수선언 */
+        let lotto = ct = 0;
+        let list = result = chart = ''    
+        let res=[];
+        const box=[];        
+        for(let k=0;k<45;k++)box[k]=0; // 배열 0으로 초기화 
+
+    /* 로또 엔진 */
+        while(ct<target){ 
+            const arr=[];
+            while (arr.length<6){
+                lotto = Math.floor(Math.random()*45)+1
+                if(arr.indexOf(lotto)==-1)arr.push(lotto)
+                }            
+            res = arr.sort(function(a,b){return a-b})
+            // res = arr.sort((a,b)=>{a-b})
+
+    /* 번호별 개수 출력1 */  
+            for(let j=0;j<6;j++)box[res[j]-1]++
+
+            ct++ //카운팅
+            result+='['+ct+']:'+res+"<br>"
+        }
+
+    /* 화면출력 Table */
+        list+='<table>';
+        for(let n=0;n<10;n++){
+            list+='<tr>'
+            if(n%2==0){ // 테이블 제목 
+                for(let m=1;m<=10;m++){
+                    list+=`<td>${m+(n*5)}</td>`
+                }
+            }else{  // 테이블 데이터
+                for(let e=0;e<10;e++){
+                    if((e+(n-1)*5)<45){ // 1 에서 45까지만 출력
+                        list+=`<td>${box[e+(n-1)*5]}</td>`
+                    }else{ // 이후는 무시
+                        list+=`<td> x </td>`
+                    }
+                }
+            }
+            list+='</tr>'
+        }
+        list+='</table><br>'
+
+    /* html for 차트 생성 미완 */   
+        // for(let x=0;x<45;x++)chart +=`<div class="c${x}"></div>`
+    /* 결과 확인 */        
+        document.write(list +target+'번을 돌린 결과 기록들:<br>'+result)
+    /* 디버깅 */
+        console.timeEnd("로또엔진"+target+"회 동작")    
+        console.log(box) // 누적숫자배열 확인
+    </script>
+</body>
+</html>

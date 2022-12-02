@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나머지 매개변수</title>
+</head>
+<body>
+    <script> 
+    let v1
+    let v2   
+    function sample(...items){        // 나머지매개변수에는 무조건 배열로 묶여서 들어온다.
+        console.log(items)
+        return items
+    }
+    sample(1) //1 undefined []
+    sample(1,2)  //1 2 []
+    sample('안녕') //안녕 undefined []
+    sample([1,2,3],[4,5]) //(3) [1, 2, 3]0: 11: 22: 3length: 3[[Prototype]]: Array(0) 
+    sample([[1,2],[4,5]]) //(2) [Array(2), Array(2)]0: (2) [1, 2]1: (2) [4, 5]length: 2[[Prototype]]: Array(0) undefined []
+    v1 = sample(11,22,33) //11 22 [33]
+    v2 = sample([2,3,4])
+
+
+    console.log(v1)
+    console.log(v1[0])
+    console.log(v2)
+    console.log(v2[0])
+    console.log(v2[0][0])
+    </script>
+</body>
+</html>

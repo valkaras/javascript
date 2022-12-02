@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        선언적함수(); //hoisting
+        function 선언적함수(){
+            console.log(`1번째 선언적 함수입니다.`);
+        }
+        function 선언적함수(){
+            console.log(`2번째 선언적 함수입니다.`);
+        }
+        함수표현식();
+        함수표현식 = function(){
+            console.log(`함수표현식`)
+        }
+        // console.log(foo1);
+        // let foo1 = 10; //오류가 난다. let일 경우 hoisting 안됨. 
+
+
+        console.log(foo2); // undefined가 출력
+        var foo2 = 20; //오류가 안난다. var일 경우 선언은 hoisting됨, 할당은 hoisting 안된다.
+        console.log(foo2);
+        // console.log(foo2);
+        
+        console.log(foo3); //밑에 선언이 따로 없으면 let처럼 에러발생
+        foo3 = 30;
+        // var foo3;  //밑에 var 선언이 있을 경우=> hoisting이 된다.
+        // let foo3;  //밑에 let 선언이 있을 경우=> hoisting이 안된다.
+        console.log(foo3);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

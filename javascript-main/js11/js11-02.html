@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ran = 0
+        const arr = []
+        for (let i=0;i<7;i++){
+            ran = Math.floor(Math.random()*100)+1        
+            arr.push(ran)
+        }           
+        function min(ar){
+            let min_res = ar[0]
+            for(let j=0;j<ar.length;j++){
+                if(min_res > ar[j]){
+                    min_res=ar[j]
+                }                
+            }                  
+            return min_res              
+        }
+        function max(ar){
+            let max_res = ar[0]
+            for(let max of ar){
+                if(max_res < max){
+                    max_res=max
+                }                
+            }                
+            return max_res  
+        }            
+        document.write(arr+'의<br>최소값은: '+ min(arr)+'<br>최대값은: '+ max(arr))      
+        
+    </script>
+</body>
+</html>

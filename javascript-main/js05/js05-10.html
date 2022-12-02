@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>가위바위보 게임</title>
+</head>
+<body>    
+    <script>
+        let comc=userc=ct=0;
+        let list =`<h2>가위,바위,보 중 하나를 누르세요.</h2>`
+        let res=''
+        let result=`<div>
+                        <button onclick="muk('가위')">가위</button>
+                        <button onclick="muk('바위')">바위</button>
+                        <button onclick="muk('보')">보</button>
+                    </div>
+                    <span id="res"></span>`;
+        document.write(list + result)        
+        function muk(user){
+        // while(1){
+            let ran = parseInt(Math.random()*3) // 0~2 랜덤선정
+            let com = ['가위','바위','보']
+            // const user = prompt('가위,바위,보,그만 중 하나를 입력하세요.')
+            if (com[ran]==user){
+                ct++ // 게임 수
+                res=('<span id="res">['+ct+'회째]비겼습니다 -.-<br>컴퓨터'+comc+'승, 당신'+userc+'승<br>컴퓨터:'+com[ran]+'<br>당신:'+user+'</span>')
+                document.getElementById("res").innerHTML=res
+            }
+            if((ran==0&&user==com[2])||(ran==1&&user==com[0])||(ran==2&&user==com[1])){
+                ct++// 게임 수
+                comc++// 컴승 수
+                res=('<span id="res">['+ct+'회째]컴퓨터가 이겼습니다. 깝ㄴㄴ!!<br>컴퓨터'+comc+'승, 당신'+userc+'승<br>컴퓨터:'+com[ran]+'<br>당신:'+user+'</span>')
+                document.getElementById("res").innerHTML=res
+            }
+            if((ran==0&&user==com[1])||(ran==1&&user==com[2])||(ran==2&&user==com[0])){
+                ct++// 게임 수
+                userc++// 유저승 수
+                res=('<span id="res">['+ct+'회째]축하합니다. 당신이 이겼습니다!<br>컴퓨터'+comc+'승, 당신'+userc+'승<br>컴퓨터:'+com[ran]+'<br>당신:'+user+'</span>')
+                document.getElementById("res").innerHTML=res
+            }            
+            // document.write(list + result) 
+            
+            // if(user=='그만')break;
+            // 어래이로 도전해보기
+            // document.write(list + "<div>"+result+"</div>")
+        }
+        // document.write('이용해 주셔서 감사합니다!')
+    // }
+    
+    </script>
+</body>
+</html>

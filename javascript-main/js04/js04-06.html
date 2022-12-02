@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>for로 표그리기</title>
+   
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <script>
+        let html_out ='<table><tr>'
+       for(let i=0;i<40;i++){
+        html_out += `<td>${i+1}</td>`
+       }
+       html_out += `</tr></table>`   
+     document.write(html_out)    
+    </script>
+
+    <!-- table>tr>td{$}*40    -->
+</body>
+</html>
